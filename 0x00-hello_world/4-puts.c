@@ -1,8 +1,8 @@
 #include <studio.h>
-/*
+/**
  * main - print a line of code using put function
  *
- * Return: 0
+ * Return: 0 
 */
 int main(void)
 {
