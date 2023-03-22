@@ -2,6 +2,7 @@
 
 /**
  * main - A program that prints _putchar
+ * is written by David
  * Return: Always 0
  */
 int main(void)
