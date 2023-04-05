@@ -1,11 +1,9 @@
-#inlude "main.h"
-
+#include "main.h"
 /**
- * _strlen_recursion - this function prints the length of string
- * @s: string whose length should be printed
- * Return: int
+ * _strlen_recursion - function that prints length of string
+ * @s:string to be printed
+ * Return:int
  */
-
 int _strlen_recursion(char *s)
 {
 	int i = 0;
