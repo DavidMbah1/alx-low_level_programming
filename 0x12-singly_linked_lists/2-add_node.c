@@ -29,29 +29,29 @@ unsigned int _strlen(char *str)
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *latest, *tmp;
+	list_t *new, *temp;
 
 	if (str == NULL)
 		return (NULL);
-	latest = malloc(sizeof(list_t));
+	new = malloc(sizeof(list_t));
 	if (latest == NULL)
 		return (NULL);
-	latest->str = strdup(str);
-	if (latest->str == NULL)
+	new->str = strdup(str);
+	if (new->str == NULL)
 	{
-		free(latest);
+		free(new);
 		return (NULL);
 	}
-	latest->len = _strlen(latest->str);
-	latest->next = NULL;
+	new->len = _strlen(new->str);
+	new->next = NULL;
 	if (*head == NULL)
 	{
-		*head = latest;
-		return (latest);
+		*head = new;
+		return (new);
 	}
-	tmp = *head;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = latest;
-	return (latest);
+	temp = *head;
+	while (temp->next)
+		temp = temp->next;
+	temp->next = new;
+	return (new);
 }
