@@ -1,23 +1,15 @@
-#include<stdio.h>
+#include <stdio.h>
+
+void applyy(void) __attribute__ ((constructor));
 
 /**
- * myStartupFun - func applies the constructor attribute to myStartupFun()
- *  so that it is executed before main()
+ * applyy - this prints a sentence before the main
+ * function is executed.
  */
 
 
-void myStartupFun(void) __attribute__ ((constructor));
-
-
-
-/**
- * myStartupFun - this function implements myStartupFun
- */
-
-
-void myStartupFun(void)
+void applyy(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
-
 	printf("I bore my house upon my back!\n");
 }
