@@ -2,7 +2,7 @@
 
 
 /**
- * flip_bits - funcion that flips to get 
+ * flip_bits - funcion that flips to get
  * from one number to another.
  * @n: this is the first number
  * @m: this is the second number
