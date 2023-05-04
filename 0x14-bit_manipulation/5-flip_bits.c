@@ -20,7 +20,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	differ = n ^ m;
 	for (d = 0; d < (sizeof(unsigned long int) * 8); d++)
 	{
-		if (product == (diffe & product))
+		if (product == (differ & product))
 			t++;
 		product <<= 1;
 	}
