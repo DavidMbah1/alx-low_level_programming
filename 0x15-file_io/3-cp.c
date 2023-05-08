@@ -112,14 +112,14 @@ int main(int argc, char *argv[])
 
 	check97(argc);
 	fed_from = open(argv[1], O_RDONLY);
-	check98((ssize_t)fed_from, fff argv[1], -1, -1);
+	check98((ssize_t)fed_from, argv[1], -1, -1);
 	file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	fed_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, file_perm);
 	check99((ssize_t)fed_to, argv[2], fed_from, -1);
 	lentr = 1024;
 	while (lentr == 1024)
 	{
-		lentr = read(feed_from, buffer, 1024);
+		lentr = read(fed_from, buffer, 1024);
 		check98(lentr, argv[1], fed_from, fed_to);
 		lentw = write(fed_to, buffer, lentr);
 		if (lentw != lentr)
