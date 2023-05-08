@@ -7,7 +7,7 @@
  * @letters: This is the number of letters
  * the function should read and print.
  * Return: If the function fails or filename is NULL - 0.
- * O/w - this is the actual number of bytes the 
+ * O/w - this is the actual number of bytes the
  * function can read and print.
  */
 
