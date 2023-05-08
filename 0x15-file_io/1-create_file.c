@@ -2,48 +2,35 @@
 
 
 /**
- * _strlen - function finds the length of a string
- * @str: this is the pointer to the string
- * Return: length of the string.
+ * create_file - function creates an array of chars, and initializes
+ * @text_content: this is the  is a NULL
+ * terminated string to write to the file
+ * @filename: this is the name of the file to create
+ * Return: 1 on success, -1 on failure
  */
 
 
-size_t _strlen(char *str)
+int create_file(const char *filename, char *text_content)
 {
-	size_t dd;
-
-	for (dd = 0; str[dd]; dd++)
-		;
-	return (dd);
-
-
-}
-
-
-
-/**
- * append_text_to_file - function appends a text at the end of a file.
- * @filename: this is the name of the file
- * @text_content: NULL terminated string to add at the end of the file
- * Return: 1 on success and -1 on failure
- */
-
-
-int append_text_to_file(const char *filename, char *text_content)
-{
-	int fed;
-	ssize_t lent;
+	int oh, wh, lent = 0;
 
 	if (filename == NULL)
 		return (-1);
-	fed = open(filename, O_WRONLY | O_APPEND);
-	if (fed == -1)
-		return (-1);
+
 	if (text_content != NULL)
-		lent = write(fed, text_content, _strlen(text_content));
-	close(fed);
-	if (lent == -1)
+	{
+		for (lent = 0; text_content[lent];)
+			lent++;
+	}
+
+	oh = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	wh = write(oh, text_content, lent);
+
+	if (oh == -1 || wh == -1)
 		return (-1);
+
+	close(oh);
+
 	return (1);
 
 
